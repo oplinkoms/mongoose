@@ -10,7 +10,7 @@ SSL_CFLAGS = -DMG_ENABLE_SSL=1 -DDISABLE_MD5=1 -D_SYS_QUEUE_H_
 all: $(LIB_NAME) 
 
 $(LIB_NAME): 
-	$(CC) mongoose.c -shared -fPIC -o $(LIB_NAME) $(SSL_CFLAGS) 
+	$(CC) mongoose.c -shared -fPIC -o $(LIB_NAME) $(SSL_CFLAGS) -lssl -lcrypto -L/home/fandy/devel/shasta/filesystem/usr/local/lib/
         
 clean:
 	@rm -rf *.o *.so
